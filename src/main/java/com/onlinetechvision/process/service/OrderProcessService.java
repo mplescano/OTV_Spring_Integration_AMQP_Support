@@ -2,6 +2,7 @@ package com.onlinetechvision.process.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,7 @@ public class OrderProcessService implements ProcessService<Order> {
     }
 
     @Override
+    @ServiceActivator
 	public void process(Message<Order> message) {
 		try {
 			Thread.sleep(SLEEP_DURATION);
