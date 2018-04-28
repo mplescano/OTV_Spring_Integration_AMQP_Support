@@ -1,10 +1,8 @@
 package com.onlinetechvision.process.service;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.messaging.Message;
-import org.springframework.stereotype.Component;
 
 import com.onlinetechvision.model.Order;
 
