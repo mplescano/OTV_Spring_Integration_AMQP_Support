@@ -2,6 +2,7 @@ package com.onlinetechvision.integration;
 
 import java.util.List;
 
+import org.springframework.integration.annotation.Gateway;
 import org.springframework.messaging.Message;
 
 import com.onlinetechvision.model.Order;
@@ -21,5 +22,6 @@ public interface OrderGateway {
      *
      * @param message SI Message covering Order payload.
      */
+    @Gateway
 	void processOrderRequest(Message<List<Order>> message);
 }

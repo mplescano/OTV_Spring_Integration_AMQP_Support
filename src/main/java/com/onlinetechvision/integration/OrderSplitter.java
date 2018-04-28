@@ -2,6 +2,7 @@ package com.onlinetechvision.integration;
 
 import java.util.List;
 
+import org.springframework.integration.annotation.Splitter;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,6 @@ import com.onlinetechvision.model.Order;
  * @version 1.0.0
  *
  */
-@Component("orderSplitter")
 public class OrderSplitter {
 
     /**
@@ -25,6 +25,7 @@ public class OrderSplitter {
      * @param message SI Message covering Order List payload.
      * @return order list
      */
+    @Splitter
     public List<Order> splitOrderList(Message<List<Order>> message) {
         return message.getPayload();
     }

@@ -15,13 +15,16 @@ import com.onlinetechvision.model.Order;
  * @version 1.0.0
  *
  */
-@Component("orderProcessService")
 public class OrderProcessService implements ProcessService<Order> {
 	
-	private final Logger logger = LoggerFactory.getLogger(OrderProcessService.class);
+	private final Logger logger;
 	private final static long SLEEP_DURATION = 1_000;
 	
-	@Override
+	public OrderProcessService(Logger logger) {
+        this.logger = logger;
+    }
+
+    @Override
 	public void process(Message<Order> message) {
 		try {
 			Thread.sleep(SLEEP_DURATION);
